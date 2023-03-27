@@ -1,0 +1,15 @@
+{
+  "name": "playground",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "print": "core-cli --name haha --age 40"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "core": "workspace:*"
+  },
+  "license": "ISC"
+}
