@@ -26,10 +26,10 @@ importers:
       typescript: ^4.9.5
       vite: ^4.2.0
     dependencies:
+      '@napi-rs/canvas': 0.1.39
       '@rollup/pluginutils': 5.0.2
       thumbhash-node: 0.1.1
     devDependencies:
-      '@napi-rs/canvas': 0.1.39
       '@types/node': 18.11.18
       benny: 3.7.1
       thumbhash: 0.1.1
@@ -300,7 +300,7 @@ packages:
     cpu: [arm64]
     os: [android]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@napi-rs/canvas-darwin-arm64/0.1.39:
@@ -309,7 +309,7 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@napi-rs/canvas-darwin-x64/0.1.39:
@@ -318,7 +318,7 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@napi-rs/canvas-linux-arm-gnueabihf/0.1.39:
@@ -327,7 +327,7 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@napi-rs/canvas-linux-arm64-gnu/0.1.39:
@@ -336,7 +336,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@napi-rs/canvas-linux-arm64-musl/0.1.39:
@@ -345,7 +345,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@napi-rs/canvas-linux-x64-gnu/0.1.39:
@@ -354,7 +354,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@napi-rs/canvas-linux-x64-musl/0.1.39:
@@ -363,7 +363,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@napi-rs/canvas-win32-x64-msvc/0.1.39:
@@ -372,7 +372,7 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@napi-rs/canvas/0.1.39:
@@ -388,7 +388,7 @@ packages:
       '@napi-rs/canvas-linux-x64-gnu': 0.1.39
       '@napi-rs/canvas-linux-x64-musl': 0.1.39
       '@napi-rs/canvas-win32-x64-msvc': 0.1.39
-    dev: true
+    dev: false
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}

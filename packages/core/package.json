@@ -41,7 +41,6 @@
   "author": "nemurubaka",
   "license": "MIT",
   "devDependencies": {
-    "@napi-rs/canvas": "^0.1.39",
     "@types/node": "^18.11.18",
     "benny": "^3.7.1",
     "thumbhash": "^0.1.1",
@@ -51,6 +50,7 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.0.2",
+    "@napi-rs/canvas": "^0.1.39",
     "thumbhash-node": "^0.1.1"
   }
 }
