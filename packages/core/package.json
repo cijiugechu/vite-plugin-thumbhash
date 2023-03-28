@@ -1,37 +1,56 @@
 {
-  "name": "core",
-  "version": "0.0.1",
-  "description": "",
-  "main": "dist/index.js",
+  "name": "vite-plugin-thumbhash",
+  "version": "0.1.0",
+  "description": "Add ThumbHash to your vite project.",
+  "type": "module",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "private": true,
-  "keywords": [],
+  "private": false,
+  "keywords": [
+    "vite",
+    "thumbhash",
+    "vite-plugin",
+    "plugin",
+    "thumb",
+    "image",
+    "avif"
+  ],
   "files": [
-    "dist"
+    "dist",
+    "client.d.ts"
   ],
   "exports": {
-    "require": "./dist/index.js",
-    "import": "./dist/index.mjs"
-  },
-  "bin": {
-    "core-cli": "dist/bin/index.js"
+    ".": {
+      "import": "./dist/index.mjs"
+    },
+    "./client": {
+      "types": "./client.d.ts"
+    }
   },
   "scripts": {
     "build:debug": "tsup --config tsup.debug.ts",
-    "build": "tsup --config tsup.config.ts"
+    "build": "tsup --config tsup.config.ts",
+    "bench": "node ./bench.mjs"
   },
-  "homepage": "https://github.com/jufuku-haijo/ts-lib-starter",
+  "homepage": "https://github.com/cijiugechu/vite-plugin-thumbhash",
   "repository": {
     "type": "git",
     "url": "git@github.com:jufuku-haijo/ts-lib-starter.git"
   },
-  "bugs": "https://github.com/jufuku-haijo/ts-lib-starter/issues",
-  "author": "",
-  "license": "ISC",
+  "bugs": "https://github.com/cijiugechu/vite-plugin-thumbhash/issues",
+  "author": "nemurubaka",
+  "license": "MIT",
   "devDependencies": {
+    "@napi-rs/canvas": "^0.1.39",
     "@types/node": "^18.11.18",
+    "benny": "^3.7.1",
+    "thumbhash": "^0.1.1",
     "tsup": "^6.5.0",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "vite": "^4.2.0"
+  },
+  "dependencies": {
+    "@rollup/pluginutils": "^5.0.2",
+    "thumbhash-node": "^0.1.1"
   }
 }

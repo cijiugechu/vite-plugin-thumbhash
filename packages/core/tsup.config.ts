@@ -2,12 +2,11 @@ import { defineConfig } from 'tsup'
 
 export default defineConfig({
   entry: ['./index.ts'],
-  format: 'esm',
+  format: ['esm'],
   dts: true,
   clean: true,
-  outExtension: () => {
-    return {
-      js: '.mjs',
-    }
-  },
+  external: ['@napi-rs/canvas', 'thumbhash-node', '@rollup/pluginutils'],
+  outExtension: () => ({
+    js: '.mjs',
+  }),
 })

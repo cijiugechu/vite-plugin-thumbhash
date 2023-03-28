@@ -2,14 +2,18 @@
   "name": "playground",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "print": "core-cli --name haha --age 40"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
   "devDependencies": {
-    "core": "workspace:*"
+    "vite-plugin-thumbhash": "workspace:*",
+    "typescript": "^5.0.0",
+    "vite": "^4.2.0"
   },
   "license": "ISC"
 }
