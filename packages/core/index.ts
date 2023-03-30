@@ -56,15 +56,6 @@ async function loadImageAndConvertToRgba(path: string) {
   }
 }
 
-type MimeType = 'image/webp' | 'image/jpeg' | 'image/avif' | 'image/png'
-
-const extToMimeTypeMap: Record<OutputExtension, MimeType> = {
-  avif: 'image/avif',
-  jpg: 'image/jpeg',
-  png: 'image/png',
-  webp: 'image/webp',
-}
-
 const fromRGBAToImageBuffer = (
   rgba: Uint8Array,
   mimeType: MimeType,
@@ -87,6 +78,31 @@ const fromRGBAToImageBuffer = (
   const buffer = canvas.toBuffer(mimeType)
 
   return buffer
+}
+
+type MimeType = 'image/webp' | 'image/jpeg' | 'image/avif' | 'image/png'
+
+const extToMimeTypeMap: Record<OutputExtension, MimeType> = {
+  avif: 'image/avif',
+  jpg: 'image/jpeg',
+  png: 'image/png',
+  webp: 'image/webp',
+}
+
+const isThumbHash = (id: string) => {
+  return id.endsWith('?th') || id.endsWith('?thumb')
+}
+
+const cleanId = (id: string) => id.replace('?thumb', '').replace('?th', '')
+
+const buildViteAsset = (referenceId: string) => `__VITE_ASSET__${referenceId}__`
+
+const buildDataURL = (buf: Buffer, mimeType: MimeType) => {
+  const dataPrefix = `data:${mimeType};base64,`
+
+  const dataURL = `${dataPrefix}${buf.toString('base64')}`
+
+  return dataURL
 }
 
 const thumbHash = (options: Options = {}): Plugin => {
@@ -115,8 +131,8 @@ const thumbHash = (options: Options = {}): Plugin => {
         return null
       }
 
-      if (id.endsWith('?th') || id.endsWith('?thumb')) {
-        const cleanedId = id.replace('?thumb', '').replace('?th', '')
+      if (isThumbHash(id)) {
+        const cleanedId = cleanId(id)
 
         if (config.command === 'serve') {
           if (devCache.has(id)) {
@@ -133,9 +149,7 @@ const thumbHash = (options: Options = {}): Plugin => {
             height
           )
 
-          const dataPrefix = `data:${bufferMimeType};base64,`
-
-          const dataURL = `${dataPrefix}${buffer.toString('base64')}`
+          const dataURL = buildDataURL(buffer, bufferMimeType)
 
           const loadedSource = loader({
             thumbSrc: dataURL,
@@ -183,10 +197,10 @@ const thumbHash = (options: Options = {}): Plugin => {
         // import.meta.ROLLUP_FILE_URL_
 
         const loadedSource = loader({
-          thumbSrc: `__VITE_ASSET__${referenceId}__`,
+          thumbSrc: buildViteAsset(referenceId),
           thumbWidth: width,
           thumbHeight: height,
-          originalSrc: `__VITE_ASSET__${originalRefId}__`,
+          originalSrc: buildViteAsset(originalRefId),
           originalWidth: originalWidth,
           originalHeight: originalHeight,
         })
