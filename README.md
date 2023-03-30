@@ -40,11 +40,34 @@ import Image from 'example.jpg?thumb'
 />
 ```
 
-## TypeScript
+## TypeScript IntelliSense
 
 Add the following code to `vite-env.d.ts` :
 ```ts
 /// <reference types="vite-plugin-thumbhash/client" />
+```
+
+## Options
+
+```ts
+type Options =
+    {
+      /**
+       * A picomatch pattern, or array of patterns, 
+       * which specifies the files in the build the plugin should operate on. 
+       */
+      include?: Array<string | RegExp> | string | RegExp
+      /**
+       * A picomatch pattern, or array of patterns,
+       * which specifies the files in the build the plugin should ignore.
+       */
+      exclude?: Array<string | RegExp> | string | RegExp
+      /**
+       * type OutputExtension = 'png' | 'jpg' | 'webp' | 'avif'
+       * @default: 'png'
+       */
+      outputExtension?: OutputExtension
+    }
 ```
 
 ## Example
