@@ -6,9 +6,9 @@ import { loadImage, createCanvas, ImageData } from '@napi-rs/canvas'
 import { rgbaToThumbHash, thumbHashToRGBA } from 'thumbhash-node'
 import type { Plugin, ResolvedConfig } from 'vite'
 
-type OutputExtension = 'png' | 'jpg' | 'webp' | 'avif'
+export type OutputExtension = 'png' | 'jpg' | 'webp' | 'avif'
 
-type Options =
+export type Options =
   | {
       include?: Array<string | RegExp> | string | RegExp
       exclude?: Array<string | RegExp> | string | RegExp
