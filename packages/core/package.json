@@ -52,5 +52,8 @@
     "@rollup/pluginutils": "^5.0.2",
     "@napi-rs/canvas": "^0.1.41",
     "thumbhash-node": "^0.1.1"
+  },
+  "peerDependencies": {
+    "vite": ">=2.9.5"
   }
 }
