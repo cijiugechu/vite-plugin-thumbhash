@@ -2,7 +2,7 @@
   "name": "vite-plugin-thumbhash",
   "version": "0.1.5",
   "description": "Add ThumbHash to your vite project.",
-  "type": "module",
+  "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "private": false,
@@ -21,7 +21,9 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
     },
     "./client": {
       "types": "./client.d.ts"
