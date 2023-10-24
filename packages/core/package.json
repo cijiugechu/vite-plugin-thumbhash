@@ -43,7 +43,7 @@
   "author": "nemurubaka",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^18.11.18",
+    "@types/node": "^20.0.0",
     "benny": "^3.7.1",
     "thumbhash": "^0.1.1",
     "tsup": "^6.7.0",
