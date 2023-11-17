@@ -13,7 +13,7 @@
   "devDependencies": {
     "vite-plugin-thumbhash": "workspace:*",
     "typescript": "^5.0.0",
-    "vite": "^4.2.0"
+    "vite": "^5.0.0"
   },
   "license": "ISC"
 }
